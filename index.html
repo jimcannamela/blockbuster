@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewp    <!-- <link rel="icon" type="image/x-icon" href="/favicon.ico"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="icon" type="image/x-icon" href="/favicon.ico"> -->
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous"> -->
     <!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script> -->
     <link rel="stylesheet" href="styles/main.css"/>
@@ -15,10 +16,11 @@
     <header>
         <nav>
             <ul>
-                <li>Home</li>
-                <li>What's New</li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="whatsnew.html">What's New</a></li>
             </ul>
         </nav>
+        <h1>OUR CRAZY MOVIE THINGAMAJIG-Index</h1>
     </header>
     <main>
         <form id="searchForm">
@@ -29,8 +31,14 @@
                     <option value="actor">Actor</option>
                     <option value="director">Director</option>
                 </select>
-            <input disabled type="submit" value="Search It!"/>
+            <input type="submit" value="Search It!"/>
         </form>
+        <section>
+            <h2>Results</h2>
+            <ul id="search-results-list">
+            </ul>
+          </section>
+      
     </main>
     <footer>
         <!-- copyright elleconnerjim llp -->
