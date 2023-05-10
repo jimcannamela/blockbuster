@@ -15,7 +15,6 @@
 
 li h2 {
     overflow: auto;
-    font-size: small;
 }
 
 img {
@@ -23,3 +22,48 @@ img {
     height: 250px;
 }
 
+form * {
+    background-color: lightgrey;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 0.5em;
+    box-shadow: 2px 2px black;
+    margin-top: 20px;
+  }
+
+#query {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+#type {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+button {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+#searchForm {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+}
+
+.results {
+    transform: rotate(20deg);
+    padding-bottom: 20px;
+    padding-top: 10px;
+}
+
+.info{
+    display: inline;
+}
+
+/* h2 {
+    margin-bottom: 1px;
+} */

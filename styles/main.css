@@ -8,10 +8,24 @@ nav li{
     padding: 10px;
 }
 
+li a:link{
+    color: #FFCC00;
+    text-decoration: none;
+}
+
+li a:visited{
+    color: #FFCC00;
+}
+
 h1 {
     text-align: center;
+    transform: rotate(20deg);
+    padding-bottom: 20px;
 }
 
 body{
     text-align: center;
+    background-color: #1030AD;
+    color: #FFCC00;
+    font-family: 'Blockletter', sans-serif;
 }
