@@ -1,3 +1,4 @@
+const releases =
 {
     "releases": [
         {
@@ -1135,4 +1136,4 @@
             "is_original": 0
         }
     ]
-}
+};
