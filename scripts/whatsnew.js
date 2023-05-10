@@ -14,7 +14,7 @@ let slideIndex = 1;
 const carousel = document.querySelector('#carousel');
 
 function populateCarousel(movie, index){
-    console.log(movie);
+    // console.log(movie);
     const carouselDiv = document.createElement('div');
     const carouselItem = document.querySelector('#iteminfo');
     const posterDiv = document.createElement('img');
@@ -38,7 +38,7 @@ function populateCarousel(movie, index){
    
 };
 
-console.log(releases);
+// console.log(releases);
 
 Promise.all(releases.releases.map(m => getPoster(m.imdb_id)))
 
@@ -49,7 +49,7 @@ Promise.all(releases.releases.map(m => getPoster(m.imdb_id)))
         populateCarousel(releases.releases[p],p);
         
     }
-   
+    console.log('intial show');
     showSlides(slideIndex);
 
 });
@@ -60,13 +60,13 @@ const backBtn = document.querySelector('.back');
 
 forwardBtn.addEventListener("click", function(event) {
     console.log('forwardBtn')
-    plusSlides(1)
+    showSlides(slideIndex);
     
 })
 
 backBtn.addEventListener("click", function(event) {
     console.log('backBtn')
-    plusSlides(-1)
+    plusSlides(-6)
 })
 
 
@@ -94,9 +94,9 @@ function showSlides(n){
     // dots[i].className = dots[i].className.replace(" active", "");
     // }
     for(let j = 0; j < 3; j++){
-    slides[slideIndex-1].style.display = "block";  
         n++
         slideIndex++
+        slides[slideIndex-1].style.display = "block";  
         console.log('j' + j + ' n' +  n + 'slideIndex' + slideIndex);
     // dots[slideIndex-1].className += " active";
     if (n > slides.length) {slideIndex = 1}    
