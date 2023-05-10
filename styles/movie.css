@@ -2,7 +2,9 @@
     display: grid;
     grid-template-columns: 50% 50%;
     column-gap: 0;
-    border: 2px dashed #FFCC00
+    border: 2px dashed #FFCC00;
+    max-width: 80%;
+    margin: auto;    
 }
 
 #title {
