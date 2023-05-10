@@ -1,0 +1,27 @@
+.container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    column-gap: 0;
+    border: 2px dashed #FFCC00
+}
+
+#title {
+    text-align: center;
+    margin-top: 40px;
+}
+
+#details {
+    display: flex;
+    align-items: center;
+}
+
+/* #poster {
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+#header {
+    grid-column-start: 1;
+    grid-column-end: 2;
+} */
+

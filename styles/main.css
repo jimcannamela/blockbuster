@@ -20,7 +20,10 @@ li a:visited{
 h1 {
     text-align: center;
     transform: rotate(20deg);
-    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border: 2px dashed #FFCC00;
+    margin-left: 40%;
+    margin-right: 40%;
 }
 
 body{
