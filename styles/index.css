@@ -1,0 +1,25 @@
+#search-results-list {
+    align-items: center;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(20%, 1fr));
+    align-content: center;
+    align-items: stretch;
+}
+
+#search-results-list li {
+    list-style-type: none;
+    border: 2px solid black;
+    align-content: center;
+}
+
+li h2 {
+    overflow: auto;
+    font-size: small;
+}
+
+img {
+    width: 150px;
+    height: 250px;
+}
+

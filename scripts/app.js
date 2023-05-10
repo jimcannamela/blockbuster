@@ -90,12 +90,12 @@ searchBarSubmit.addEventListener("click", function(event)  {
 
     response
         .then(response => {
-            // if(response.status !== 200){
-            //     throw Error('Subreddit not found')
-            // }
-            // while(resultsList.firstChild){
-            //     resultsList.removeChild(resultsList.firstChild);
-            // }
+            if(response.status !== 200){
+                throw Error('Media not found')
+            }
+            while(resultsList.firstChild){
+                resultsList.removeChild(resultsList.firstChild);
+            }
             return response.json();
         })
         .then(movieData => { 

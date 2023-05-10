@@ -1,0 +1,17 @@
+header nav{
+    text-align: right;
+}
+
+nav li{
+    list-style-type: none;
+    display: inline;
+    padding: 10px;
+}
+
+h1 {
+    text-align: center;
+}
+
+body{
+    text-align: center;
+}
