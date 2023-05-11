@@ -19,6 +19,47 @@ const type = JSON.parse(movieData).type;
 
 console.log(movieID);
 
+function populateFootNotes(movie) {
+    const fnTable = document.createElement('table');
+
+    const fnRow1 = document.createElement('tr');
+    const fnRow2 = document.createElement('tr');
+
+    const fnCell1 = document.createElement('td');
+    const fnCell2 = document.createElement('td');
+    const fnCell3 = document.createElement('td');
+    const fnCell4 = document.createElement('td');
+    const fnCell5 = document.createElement('td');
+
+    const fnLink = document.createElement('a');
+    const fnImg = document.createElement('img');
+
+    fnCell1.innerText='Rating:';
+    fnRow1.append(fnCell1);
+
+    fnCell2.innerText=movie.us_rating;
+    fnRow1.append(fnCell2);
+
+    fnCell3.setAttribute('rowspan',2);
+    fnLink.href=`https://www.imdb.com/title/${movie.imdb_id}`
+    fnImg.src='images/IMDBtb.png';
+    fnLink.append(fnImg);
+    fnCell3.append(fnLink);
+    fnRow1.append(fnCell3);
+    
+    fnTable.append(fnRow1);
+
+    fnCell4.innerText='Runtime:';    
+    fnRow2.append(fnCell4);
+
+    fnCell5.innerText=movie.runtime_minutes;
+    fnRow2.append(fnCell5);
+
+    fnTable.append(fnRow2);
+
+    return fnTable;
+}
+
 function populateMoviePage(movie){
     console.log(movie);
     const movieTitle = document.querySelector('#title');
@@ -39,18 +80,22 @@ function populateMoviePage(movie){
                             '&nbsp;&nbsp;✨&nbsp;&nbsp;User Rating:&nbsp;&nbsp;&nbsp;&nbsp;' + movie.user_rating;
     // movieFootNotes.innerHTML = 'Rating: '+ movie.us_rating + '<br>'+
     //                             'Runtime: ' + movie.runtime_minutes + ' min';
-    movieFootNotes.innerHTML =                            
-    `<table>
-        <tr>
-            <td>Rating:</td>
-            <td>${movie.us_rating}</td>
-            <td rowspan='2'><a href='https://www.imdb.com/title/${movie.imdb_id}'><img src='images/IMDBtb.png'/></a></td>
-        </tr>
-        <tr>
-            <td>Runtime:</td>
-            <td>${movie.runtime_minutes}</td>
-        </tr>
-    </table>`;
+    // movieFootNotes.innerHTML =                            
+    // `<table>
+    //     <tr>
+    //         <td>Rating:</td>
+    //         <td>${movie.us_rating}</td>
+    //         <td rowspan='2'><a href='https://www.imdb.com/title/${movie.imdb_id}'><img src='images/IMDBtb.png'/></a></td>
+    //     </tr>
+    //     <tr>
+    //         <td>Runtime:</td>
+    //         <td>${movie.runtime_minutes}</td>
+    //     </tr>
+    // </table>`;
+
+    footNotesTable=populateFootNotes(movie);
+    movieFootNotes.append(footNotesTable);
+
 }
 
 
