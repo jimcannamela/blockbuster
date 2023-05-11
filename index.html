@@ -9,6 +9,7 @@
     <!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script> -->
     <link rel="stylesheet" href="styles/main.css"/>
     <link rel="stylesheet" href="styles/index.css"/>
+    <link href="https://fonts.cdnfonts.com/css/blockletter" rel="stylesheet">
     <script defer src="scripts/app.js" charset="utf-8"></script>
     <script defer src="scripts/breakingBad.js" charset="utf-8"></script>
     <!--
@@ -17,7 +18,7 @@
     <script defer src="scripts/Spielberg.js" charset="utf-8"></script> -->
     <script defer src="scripts/poster.js" charset="utf-8"></script>
     <!-- <script defer src="scripts/releases.js" charset="utf-8"></script> -->
-    <title>OUR CRAZY MOVIE THINGAMAJIG-Index</title>
+    <title>Discount Blockbuster</title>
 </head>
 <body>
     <header>
@@ -27,21 +28,21 @@
                 <li><a href="whatsnew.html">What's New</a></li>
             </ul>
         </nav>
-        <h1>OUR CRAZY MOVIE THINGAMAJIG-Index</h1>
+        <h1>Discount Blockbuster</h1>
     </header>
     <main>
         <form id="searchForm">
             <input id="query"/>
-                <select id="type">
-                    <option value="movie">Movie</option>
-                    <option value="series">Series</option>
-                    <option value="actor">Actor</option>
-                    <option value="director">Director</option>
-                </select>
+            <select id="type">
+                <option value="movie">Movie</option>
+                <option value="series">Series</option>
+                <option value="actor">Actor</option>
+                <option value="director">Director</option>
+            </select>
             <button id="search-bar-submit">Search</button>    
         </form>
         <section>
-            <h2>Results</h2>
+            <h2 class="results">Results</h2>
             <ul id="search-results-list">
             </ul>
         </section>

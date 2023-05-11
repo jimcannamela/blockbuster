@@ -65,11 +65,12 @@ function populateItem(title) {
         default :
             { itemType.innerText = title.type };
     };
-    listItem.append(itemType);
+    // listItem.append(itemType);
 
     // Year
-    itemYear.innerText=title.year;
-    listItem.append(itemYear);
+    itemYear.innerText=itemType.innerText + " / " + title.year;
+    listItem.append(itemYear)
+    // listItem.append(itemYear);
     //poster
     itemPoster.setAttribute('src',  title.poster); 
     listItem.append(itemPoster);
@@ -90,12 +91,12 @@ searchBarSubmit.addEventListener("click", function(event)  {
 
     response
         .then(response => {
-            // if(response.status !== 200){
-            //     throw Error('Subreddit not found')
-            // }
-            // while(resultsList.firstChild){
-            //     resultsList.removeChild(resultsList.firstChild);
-            // }
+            if(response.status !== 200){
+                throw Error('Media not found')
+            }
+            while(resultsList.firstChild){
+                resultsList.removeChild(resultsList.firstChild);
+            }
             return response.json();
         })
         .then(movieData => { 
