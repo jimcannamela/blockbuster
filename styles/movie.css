@@ -7,6 +7,9 @@
     margin: auto;    
 }
 
+#poster {
+    margin-top: 5%;
+}
 #title {
     text-align: center;
     margin-top: 40px;
@@ -15,15 +18,17 @@
 #details {
     display: flex;
     align-items: center;
+    text-align: left;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+    font-size: larger;
+    margin-right: 5%;
 }
 
-/* #poster {
-    grid-row-start: 1;
-    grid-row-end: 2;
+#footnotes {
+    display: flex;
+    justify-content: center;
 }
-
-#header {
-    grid-column-start: 1;
-    grid-column-end: 2;
-} */
+table td {
+    padding: 5px;
+}
 

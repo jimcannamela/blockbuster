@@ -31,4 +31,12 @@ body{
     background-color: #1030AD;
     color: #FFCC00;
     font-family: 'Blockletter', sans-serif;
+
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+footer {
+    margin-top: auto;
 }

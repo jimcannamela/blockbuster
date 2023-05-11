@@ -30,10 +30,27 @@ function populateMoviePage(movie){
     movieTitle.innerText = movie.title;
     moviePlot.innerText = movie.plot_overview;
     moviePoster.src = poster;
-    movieRating.innerHTML = 'Critic Rating: '+ movie.critic_score + '<br>'+
-                            'User Rating: ' + movie.user_rating;
-    movieFootNotes.innerHTML = 'Rating: '+ movie.us_rating + '<br>'+
-                                'Runtime: ' + movie.runtime_minutes + ' min';    
+    if (movie.critic_score) {
+        criticScore = movie.critic_score;
+    } else {
+        criticScore = 'N/A'
+    };
+    movieRating.innerHTML = '&nbsp;&nbsp;🍅&nbsp;&nbsp;Critic Rating:&nbsp;&nbsp;&nbsp;&nbsp;'+ criticScore + '<br>'+
+                            '&nbsp;&nbsp;✨&nbsp;&nbsp;User Rating:&nbsp;&nbsp;&nbsp;&nbsp;' + movie.user_rating;
+    // movieFootNotes.innerHTML = 'Rating: '+ movie.us_rating + '<br>'+
+    //                             'Runtime: ' + movie.runtime_minutes + ' min';
+    movieFootNotes.innerHTML =                            
+    `<table>
+        <tr>
+            <td>Rating:</td>
+            <td>${movie.us_rating}</td>
+            <td rowspan='2'><a href='https://www.imdb.com/title/${movie.imdb_id}'><img src='images/IMDBtb.png'/></a></td>
+        </tr>
+        <tr>
+            <td>Runtime:</td>
+            <td>${movie.runtime_minutes}</td>
+        </tr>
+    </table>`;
 }
 
 

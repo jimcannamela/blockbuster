@@ -30,6 +30,12 @@ function populateCarousel(movie, index){
     
     carouselDiv.classList.add('whatsNewMedia');
     carouselDiv.innerHTML = movie.title + '<br>';
+
+    carouselDiv.addEventListener("click", function(event){
+        localStorage.setItem('movie', JSON.stringify(movie));
+        window.location.href = "movie.html";
+    });
+
     posterImg.setAttribute('alt', movie.title);
     carouselDiv.append(posterImg);
     carousel.append(carouselDiv);
