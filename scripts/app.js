@@ -1,7 +1,5 @@
 // This is our javascript there are otheres like it, but this is ours!!!
 /*
-
-
 1. Get the data from the input search bar - done
 
 2. need a event listener for click - done
@@ -13,8 +11,6 @@
 5. add items to result list
     include links to details page
     need second event listener on click of moview title or poster pass id of movie or series to movie page
-
-
 */
 // 1. Get the data from the input search bar
 
@@ -29,12 +25,9 @@ function populateItem(title) {
     const itemPoster = document.createElement('img');
     
     // Name
-    
-    // titleLink.setAttribute('href', 'movie.html')
     itemTitle.innerText=title.name;
     itemTitle.classList.add('movieLink');
     itemTitle.setAttribute('id', title.id);
-
     listItem.append(itemTitle);
 
     // Type
@@ -65,7 +58,7 @@ function populateItem(title) {
     itemYear.innerText=itemType.innerText + " / " + title.year;
     listItem.append(itemYear)
 
-    //poster
+    //Poster
     itemPoster.setAttribute('src',  title.poster); 
     listItem.append(itemPoster);
 
@@ -90,7 +83,6 @@ searchBarSubmit.addEventListener("click", function(event)  {
     event.preventDefault();
 
     const searchBar = document.querySelector("#query").value;
-    console.log(searchBar);
 
     const URL = `https://api.watchmode.com/v1/search/?apiKey=bkzyP0dAymwzKoyjlBNVHHCld7cFfWXlwegOwfHr&search_field=name&search_value=${searchBar}`;
 
@@ -99,7 +91,6 @@ searchBarSubmit.addEventListener("click", function(event)  {
 
     response
         .then(response => {
-            // console.log(response.status);
             if(response.status !== 200){
                 throw Error('Media not found')
             }
@@ -112,18 +103,10 @@ searchBarSubmit.addEventListener("click", function(event)  {
             return response.json();
         })
         .then(movieData => { 
-            console.log(movieData);
             searchResults = movieData.title_results;
             if (searchResults.length === 0 ) {
                 throw Error('Media not found')
             }
-            //console.log(searchResults);
-            // Alternate understanding of promise.all
-            // const posterPromises = [];
-            // for(let movie of searchResults){
-            //     posterPromises.push(getPoster(movie.imdb_id))
-            // }
-            // return Promise.all(posterPromises)
             return Promise.all (searchResults.map(r => getPoster(r.imdb_id)))
         })
         .then(posters => {
@@ -131,15 +114,10 @@ searchBarSubmit.addEventListener("click", function(event)  {
                 searchResults[p].poster = posters[p];
                 populateItem(searchResults[p]);
             }
-            
         })
-        
         .catch(function(error) {
-            // errorSpan.innerText = error;
-            // errorDiv.classList.toggle("hidden",false)
             populateErrorItem(error);
             console.log(error)
         });
-   
 });
 
