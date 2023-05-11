@@ -77,6 +77,15 @@ function populateItem(title) {
     resultsList.append(listItem);
 }
 
+function populateErrorItem(error) {
+    const errorDiv = document.createElement('div');
+    const errorText = document.createElement('h2');
+    errorText.innerText=error;
+    errorText.classList.add('errorMsg');
+    errorDiv.append(errorText);    
+    document.querySelector('main').append(errorDiv);
+}
+
 searchBarSubmit.addEventListener("click", function(event)  {
     event.preventDefault();
 
@@ -90,6 +99,7 @@ searchBarSubmit.addEventListener("click", function(event)  {
 
     response
         .then(response => {
+            // console.log(response.status);
             if(response.status !== 200){
                 throw Error('Media not found')
             }
@@ -101,7 +111,10 @@ searchBarSubmit.addEventListener("click", function(event)  {
         .then(movieData => { 
             console.log(movieData);
             searchResults = movieData.title_results;
-            console.log(searchResults);
+            if (searchResults.length === 0 ) {
+                throw Error('Media not found')
+            }
+            //console.log(searchResults);
             // Alternate understanding of promise.all
             // const posterPromises = [];
             // for(let movie of searchResults){
@@ -121,6 +134,7 @@ searchBarSubmit.addEventListener("click", function(event)  {
         .catch(function(error) {
             // errorSpan.innerText = error;
             // errorDiv.classList.toggle("hidden",false)
+            populateErrorItem(error);
             console.log(error)
         });
    
