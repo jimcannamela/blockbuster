@@ -49,7 +49,7 @@ Promise.all(releases.releases.map(m => getPoster(m.imdb_id)))
         populateCarousel(releases.releases[p],p);
         
     }
-    console.log('intial show');
+ 
     showSlides(slideIndex);
 
 });
@@ -59,13 +59,13 @@ const backBtn = document.querySelector('.back');
 
 
 forwardBtn.addEventListener("click", function(event) {
-    console.log('forwardBtn')
+  
     showSlides(slideIndex);
     
 })
 
 backBtn.addEventListener("click", function(event) {
-    console.log('backBtn')
+
     plusSlides(-6)
 })
 
@@ -80,21 +80,18 @@ function plusSlides(n) {
 function showSlides(n){
 
     let slides = document.getElementsByClassName("whatsNewMedia");
-    // let dots = document.getElementsByClassName("dot");
+
     for (let i = 0; i < slides.length; i++) {
         slides[i].style.display = "none"; 
     }
-    console.log(slides.length);
-    console.log('input: ' + n);
-    if (n >= slides.length) {n = 0 
-        console.log('reset n')}    
+
+    if (n >= slides.length) {n = 0}    
     if (n < 0) {n = slides.length -3}
     
     for(let j = 0; j < 3; j++){
         slides[n].style.display = "block";  
         n++
-        console.log('j' + j + ' n' +  n );
- 
+       
     }
     slideIndex = n;
 }
