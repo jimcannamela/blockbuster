@@ -32,3 +32,9 @@ body{
     color: #FFCC00;
     font-family: 'Blockletter', sans-serif;
 }
+
+footer{
+    position: absolute;
+    bottom: 1vh;
+    margin-left: 45%;
+}
