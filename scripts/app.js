@@ -23,7 +23,6 @@ const resultsList = document.body.querySelector('#search-results-list');
 
 function populateItem(title) {
     const listItem = document.createElement('li');
-    // const titleLink = document.createElement('a');
     const itemTitle = document.createElement('h2');
     const itemType = document.createElement('p');
     const itemYear = document.createElement('p');
@@ -35,11 +34,7 @@ function populateItem(title) {
     itemTitle.innerText=title.name;
     itemTitle.classList.add('movieLink');
     itemTitle.setAttribute('id', title.id);
-    itemTitle.addEventListener("click", function(event){
-        localStorage.setItem('movie', JSON.stringify(title));
-        window.location.href = "movie.html";
-    });
-    // titleLink.append(itemTitle);
+
     listItem.append(itemTitle);
 
     // Type
@@ -65,15 +60,19 @@ function populateItem(title) {
         default :
             { itemType.innerText = title.type };
     };
-    // listItem.append(itemType);
 
-    // Year
+    // Year & Type
     itemYear.innerText=itemType.innerText + " / " + title.year;
     listItem.append(itemYear)
-    // listItem.append(itemYear);
+
     //poster
     itemPoster.setAttribute('src',  title.poster); 
     listItem.append(itemPoster);
+
+    listItem.addEventListener("click", function(event){
+        localStorage.setItem('movie', JSON.stringify(title));
+        window.location.href = "movie.html";
+    });
     
     resultsList.append(listItem);
 }
