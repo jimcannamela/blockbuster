@@ -81,7 +81,7 @@ function populateErrorItem(error) {
     const errorDiv = document.createElement('div');
     const errorText = document.createElement('h2');
     errorText.innerText=error;
-    errorText.classList.add('errorMsg');
+    errorDiv.classList.add('errorMsg');
     errorDiv.append(errorText);    
     document.querySelector('main').append(errorDiv);
 }
@@ -105,6 +105,9 @@ searchBarSubmit.addEventListener("click", function(event)  {
             }
             while(resultsList.firstChild){
                 resultsList.removeChild(resultsList.firstChild);
+            }
+            while(document.querySelector('.errorMsg')){
+                document.querySelector('.errorMsg').remove();
             }
             return response.json();
         })
