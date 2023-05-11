@@ -1,10 +1,23 @@
-#carousel{
-    display: flex;
+
+#container{
+  display: grid;
+  grid-template-columns: 5% 90% 5%;
+  align-items: baseline;
 }
 
-/* .whatsNewMedia {
-  display: none; 
-} */
+#carousel{
+  display: flex;
+  flex-direction: row;
+  grid-column: 3 / 1;
+  align-items: stretch;
+  justify-content: space-around;
+  padding-top: 10%; 
+}
+
+.whatsNewMedia > img{
+  height: 80%;
+  width: auto;
+}
 
 /* Next & previous buttons */
 .back, .forward {
@@ -26,6 +39,13 @@
   .forward {
     right: 0;
     border-radius: 3px 0 0 3px;
+    grid-column: 3 / 1;
+  }
+  .back {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+    grid-column: 1 / 1;
+
   }
   
   /* On hover, add a black background color with a little bit see-through */

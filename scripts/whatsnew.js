@@ -16,22 +16,22 @@ const carousel = document.querySelector('#carousel');
 function populateCarousel(movie, index){
     // console.log(movie);
     const carouselDiv = document.createElement('div');
-    const carouselItem = document.querySelector('#iteminfo');
-    const posterDiv = document.createElement('img');
+    const posterImg = document.createElement('img');
+
 
     if(movie.poster === 'N/A'){
-        posterDiv.src = 'https://placehold.co/100x200?font=raleway&text=Missing+Poster';
+        posterImg.src = 'https://placehold.co/100x200?font=raleway&text=Missing+Poster';
     } else {
-        posterDiv.src = movie.poster;
+        posterImg.src = movie.poster;
     }
     
 
     carouselDiv.setAttribute('carouselIndex', index);
     
     carouselDiv.classList.add('whatsNewMedia');
-    
-    carouselDiv.append(posterDiv);
-    carouselDiv.append(carouselItem);
+    carouselDiv.innerHTML = movie.title + '<br>';
+    posterImg.setAttribute('alt', movie.title);
+    carouselDiv.append(posterImg);
     carousel.append(carouselDiv);
 
 
