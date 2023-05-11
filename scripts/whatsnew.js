@@ -10,7 +10,7 @@ set all movie information on page - sorted by source_name
 displayed in carousel
 
 */
-let slideIndex = 1;
+let slideIndex = 0;
 const carousel = document.querySelector('#carousel');
 
 function populateCarousel(movie, index){
@@ -76,33 +76,27 @@ function plusSlides(n) {
   showSlides(slideIndex += n);
 }
 
-// function currentSlide(n) {
-//   showSlides(slideIndex = n);
-// }
 
 function showSlides(n){
 
     let slides = document.getElementsByClassName("whatsNewMedia");
     // let dots = document.getElementsByClassName("dot");
-
-    if (n > slides.length) {slideIndex = 1}    
-    if (n < 1) {slideIndex = slides.length}
     for (let i = 0; i < slides.length; i++) {
         slides[i].style.display = "none"; 
     }
-    // for (i = 0; i < dots.length; i++) {
-    // dots[i].className = dots[i].className.replace(" active", "");
-    // }
+    console.log(slides.length);
+    console.log('input: ' + n);
+    if (n >= slides.length) {n = 0 
+        console.log('reset n')}    
+    if (n < 0) {n = slides.length -3}
+    
     for(let j = 0; j < 3; j++){
+        slides[n].style.display = "block";  
         n++
-        slideIndex++
-        slides[slideIndex-1].style.display = "block";  
-        console.log('j' + j + ' n' +  n + 'slideIndex' + slideIndex);
-    // dots[slideIndex-1].className += " active";
-    if (n > slides.length) {slideIndex = 1}    
-    if (n < 1) {slideIndex = slides.length}
-        
+        console.log('j' + j + ' n' +  n );
+ 
     }
+    slideIndex = n;
 }
 
 
