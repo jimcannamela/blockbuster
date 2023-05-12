@@ -1,14 +1,18 @@
+Elle - 
+
 Welcome the CEJ News Desk - I'm Elle Codes-a-lot with today's News.
 
-Jimmy Fallon takes over the tonight show 
+Jimmy Fallon takes over the tonight show from Jay Leno
+
 Kim Kardashian and Kanye West get married
+
 Pharrell's hit Happy tops the charts
 
 Here's Jim with your sporting news...
 
---
+Jim - 
 
-Hi Jimmy The Geek with some sporting news.
+Hi I'm Jim Cannamela with some sporting news.
 
 In baseball the Milwakee Brewers, and San Francisco Giants are tied for the league lead with 24 wins each.
 
@@ -20,12 +24,55 @@ He was the second player in Golden State Warriors history and the first in
 the team's West Coast era (since 1962-63) to receive the Maurice Podoloff Trophy — 
 55 years since Wilt Chamberlain won it as a rookie for the 1959-60 season. 
 
---
-
 and now here's Connor with today local weather...
 
-Hi I'm Connor Weatherby with today's national weather outlook.
+Connor - 
 
+Hi I'm Connor with today's national weather outlook. For today, May 12 2014 it is looking like A
+partly cloudy day with a high of 80 and a low of 66 degrees. Currently 11 mile an hour winds headed to the northeast,
+and a slight drizzle that will clear up for a little bit in the afternoon. 
 
+Looks like that tornado just took out the last Blockbuster store
 
+Jim - Hey Elle you remember that for a web site, looks like the name Blockbuster is available for use.
 
+Elle - Your right Jim that is a great idea for a site......
+
+Slide 5 
+
+    One of our challenges was creating a page to cycle through the movies which are
+    currently streaming. We found an example of a slideshow, which was showing one
+    item at a time and modified that logic a little to show 3 items.
+
+    Initially the carousel, was skipping around in our list, we determined that it 
+    was simple math and mutiple indexes which were causing our issues. We got those
+    resolved and simplified our code as shown.
+
+    If we pass in the next item to show to our function it displays that item and the
+    next two, when the back button is clicked we substract 6 from the current index
+    pass that value in and again show that and the next two.
+
+    When we hit the end of the items, the index is reset to zero, when we go past the 
+    beginning, the index is set to the last item index.
+
+Slide 6
+
+Challenges We Faced
+
+    The nested calls Elle spoke of earlier threw us for a loop Initially, once we Better 
+    grasped the asynchronous nature of the calls, we were able to get over that hump.
+
+    We needed to pass data from the search results and the what's new page to the movie details 
+    page, we thought about using a query string, however, we found some information on local
+    storage and after a bit of trial and error we got that to work fairly smoothly.
+
+    We already discussed the carousel.
+
+    Some of our ideas for styling were a little difficult to accomplish with CSS, however 
+    we are pretty happy with the outcome. With more time, we may have been able to explore 
+    different options.
+
+    To bring our main idea to fruition we need to exploit two APIs, the initial API had 
+    even more data we would have loved to access, however, at $249 per month we needed to
+    settle for an alternative. None the less, our product still provides a bounty of 
+    information.
